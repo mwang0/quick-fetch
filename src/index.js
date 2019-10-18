@@ -1,5 +1,4 @@
 import defaults from './defaults';
-import { queryString } from './utils';
 import fetchHander from './handers/fetch';
 import jsonHander from './handers/json';
 
@@ -47,7 +46,7 @@ const fetch = {
     return interceptor(true, fulfilled, rejected);
   },
   get(url, params = {}, config = {}) {
-    return request({ ...config, method: 'GET', url: queryString(url, params) });
+    return request({ ...config, method: 'GET', params });
   },
   post(url, data, config = {}) {
     return request({

@@ -1,17 +1,18 @@
 import fetch from '@system.fetch';
 import prompt from '@system.prompt';
-import { bulidFullUrl } from '../utils';
+import { bulidFullUrl, queryString } from '../utils';
 
 export default function request(opts) {
   let timer;
-  opts.url = bulidFullUrl(opts.baseUrl, opts.url);
-  const { data, method, url, responseType } = opts;
+  const { data, method, url, responseType, baseUrl, params, header } = opts;
+  let fullUrl = queryString(bulidFullUrl(baseUrl, url), params);
   const request = new Promise((resolve, reject) => {
     fetch.fetch({
-      url,
+      fullUrl,
       method,
       data,
       responseType,
+      header,
       success(res) {
         resolve(res);
       },

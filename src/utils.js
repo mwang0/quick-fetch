@@ -1,4 +1,6 @@
 export function queryString(url, query) {
+  if (!query || Object.keys(query).length === 0) return url;
+
   let str = [];
   for (let key in query) {
     if (typeof query[key] === 'object') {
@@ -14,6 +16,10 @@ export function queryString(url, query) {
 
 const absoluteURL = /^([a-z][a-z\d\+\-\.]*:)?\/\//i;
 export function bulidFullUrl(baseUrl, url) {
+  const hashmarkIndex = url.indexOf('#');
+  if (hashmarkIndex !== -1) {
+    url = url.slice(0, hashmarkIndex);
+  }
   if (baseUrl && !absoluteURL.test(url)) {
     return baseUrl.replace(/\/+$/, '') + '/' + url.replace(/^\/+/, '');
   }

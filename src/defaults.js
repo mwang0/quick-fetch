@@ -7,4 +7,5 @@ export default {
   timeOut: '15000',
   responseType: 'text', //
   header: {},
+  params: {},
 };
