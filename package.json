@@ -1,6 +1,6 @@
 {
   "name": "@m.wang/fetch",
-  "version": "0.1.0",
+  "version": "0.1.1-beta.0",
   "description": "Promise based HTTP client for the quick app",
   "main": "src/index.js",
   "scripts": {
