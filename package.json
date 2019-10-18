@@ -6,8 +6,8 @@
   "scripts": {
     "test": "",
     "commit": "git-cz",
-    "release:beta": "npm run test && standard-version --prerelease beta && npm publish --tag beta && git push --follow-tags",
-    "release": "npm run test && standard-version && npm publish && git push --follow-tags"
+    "release:beta": "standard-version --prerelease beta && npm publish --tag beta && git push --follow-tags",
+    "release": "standard-version && npm publish && git push --follow-tags"
   },
   "author": "M.Wang <wangmin2@meizu.com>",
   "license": "MIT",
@@ -23,13 +23,13 @@
     "standard-version": "^6.0.1"
   },
   "repository": {
-    "type": "",
-    "url": ""
+    "type": "git",
+    "url": "git+https://github.com/mwang0/quick-fetch"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/mwang0/quick-fetch/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/mwang0/quick-fetch",
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
