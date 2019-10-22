@@ -46,7 +46,7 @@ const fetch = {
     return interceptor(true, fulfilled, rejected);
   },
   get(url, params = {}, config = {}) {
-    return request({ ...config, method: 'GET', params });
+    return request({ ...config, method: 'GET', params, url });
   },
   post(url, data, config = {}) {
     return request({
