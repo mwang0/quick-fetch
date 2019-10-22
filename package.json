@@ -12,15 +12,17 @@
   "author": "M.Wang <wangmin2@meizu.com>",
   "license": "MIT",
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.1.0",
     "husky": "^3.0.1",
     "lint-staged": "^9.2.0",
     "prettier": "^1.18.2",
+    "standard-version": "^6.0.1",
     "stylelint": "^10.1.0",
-    "stylelint-config-recommended": "^2.2.0",
-    "standard-version": "^6.0.1"
+    "stylelint-config-recommended": "^2.2.0"
   },
   "repository": {
     "type": "git",

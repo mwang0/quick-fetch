@@ -13,9 +13,9 @@ npm install @m.wang/fetch
 - 添加接口权限
 ```sh
 "features": [
-        { "name": "system.fetch"},
-        {"name": "system.prompt"},
-    ]
+  { "name": "system.fetch"},
+  {"name": "system.prompt"},
+]
 ```
 
 ## 案例
