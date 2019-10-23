@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/mwang0/quick-fetch/compare/v0.1.5...v0.1.6) (2019-10-23)
+
+
+### Bug Fixes
+
+* 修复响应拦截器在错误的环节运行 ([c2dfc56](https://github.com/mwang0/quick-fetch/commit/c2dfc56))
+
+
+
 ### [0.1.5](https://github.com/mwang0/quick-fetch/compare/v0.1.4...v0.1.5) (2019-10-22)
 
 
