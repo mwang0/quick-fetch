@@ -20,7 +20,7 @@ function request(opts) {
     chain.unshift(hander.fulfilled, chain.rejected);
   });
   responseHandlers.forEach((hander) => {
-    chain.unshift(hander.fulfilled, chain.rejected);
+    chain.push(hander.fulfilled, chain.rejected);
   });
   while (chain.length) {
     promise = promise.then(chain.shift(), chain.shift());
