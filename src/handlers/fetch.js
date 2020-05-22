@@ -8,16 +8,17 @@ export default function request(opts) {
   let fullUrl = queryString(bulidFullUrl(baseUrl, url), params);
   const request = new Promise((resolve, reject) => {
     fetch.fetch({
-      url:fullUrl,
+      url: fullUrl,
       method,
       data,
       responseType,
       header,
       success(res) {
+        res._reqOpts = opts;
         resolve(res);
       },
       fail(data, code) {
-        reject(data, code);
+        reject({ data, code });
       },
       complete() {
         clearTimeout(timer);

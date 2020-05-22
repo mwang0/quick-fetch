@@ -1,8 +1,8 @@
 import defaults from './defaults';
-import fetchHander from './handers/fetch';
-import jsonHander from './handers/json';
+import fetchHandler from './handlers/fetch';
+import jsonHandler from './handlers/json';
 
-const requestHanders = [];
+const requestHandlers = [];
 const responseHandlers = [];
 
 function request(opts) {
@@ -13,14 +13,14 @@ function request(opts) {
 
   opts = { ...defaults, ...opts };
 
-  const chain = [fetchHander, undefined, jsonHander, undefined];
+  const chain = [fetchHandler, undefined, jsonHandler, undefined];
   let promise = Promise.resolve(opts);
 
-  requestHanders.forEach((hander) => {
-    chain.unshift(hander.fulfilled, chain.rejected);
+  requestHandlers.forEach((handler) => {
+    chain.unshift(handler.fulfilled, handler.rejected);
   });
-  responseHandlers.forEach((hander) => {
-    chain.push(hander.fulfilled, chain.rejected);
+  responseHandlers.forEach((handler) => {
+    chain.push(handler.fulfilled, handler.rejected);
   });
   while (chain.length) {
     promise = promise.then(chain.shift(), chain.shift());
@@ -29,7 +29,7 @@ function request(opts) {
 }
 
 function interceptor(isResponse = false, fulfilled, rejected) {
-  const handlers = isResponse ? responseHandlers : requestHanders;
+  const handlers = isResponse ? responseHandlers : requestHandlers;
   handlers.push({
     fulfilled,
     rejected,
@@ -50,6 +50,7 @@ const fetch = {
   },
   post(url, data, config = {}) {
     return request({
+      url,
       ...config,
       method: 'POST',
       data,
