@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/mwang0/quick-fetch/compare/v0.1.6...v0.1.7) (2020-05-22)
+
+
+### Bug Fixes
+
+* bugs ([6ae11f6](https://github.com/mwang0/quick-fetch/commit/6ae11f6))
+
+
+
 ### [0.1.6](https://github.com/mwang0/quick-fetch/compare/v0.1.5...v0.1.6) (2019-10-23)
 
 
